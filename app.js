@@ -67,9 +67,9 @@ function calculateTotal() {
   document.getElementById("sub-total").innerText = phonePrice + casePrice;
 
   //tax
-  const tax = document.getElementById("tax")
   const subTotal = parseInt(document.getElementById("sub-total").innerText);
-  tax.innerText = subTotal / 10;
+  const tax = document.getElementById("tax");
+  document.getElementById("tax").innerText = subTotal / 10;
   
   //total
   document.getElementById("total").innerText = subTotal + parseInt(tax.innerText);
@@ -79,12 +79,12 @@ function calculateTotal() {
 //when phone plus button click
 document.getElementById("phone-plus").addEventListener("click", function () {
   
-  //phone number
-  const phoneNumber = parseInt(document.getElementById("phone-count").value);
-  document.getElementById("phone-count").value = phoneNumber + 1;
+  //phone count
+  const phoneCount = parseInt(document.getElementById("phone-count").value);
+  document.getElementById("phone-count").value = phoneCount + 1;
 
   //phone price
-  document.getElementById('phone-price').innerText = (phoneNumber + 1) * 1219;
+  document.getElementById('phone-price').innerText = (phoneCount + 1) * 1219;
 
   //call function
   calculateTotal()
@@ -95,12 +95,12 @@ document.getElementById("phone-plus").addEventListener("click", function () {
 //when case plus button click
 document.getElementById("case-plus").addEventListener("click", function () {
   
-  //case number
-  const caseNumber = parseInt(document.getElementById("case-count").value);
-  document.getElementById("case-count").value = caseNumber + 1;
+  //case count
+  const caseCount = parseInt(document.getElementById("case-count").value);
+  document.getElementById("case-count").value = caseCount + 1;
 
   //case price
-  document.getElementById('case-price').innerText = (caseNumber + 1) * 59;
+  document.getElementById('case-price').innerText = (caseCount + 1) * 59;
 
   //call function
   calculateTotal()
@@ -112,15 +112,15 @@ document.getElementById("case-plus").addEventListener("click", function () {
 //when phone minus button click
 document.getElementById("phone-minus").addEventListener("click", function () {
   
-  //case number
-  const phoneNumber = parseInt(document.getElementById("phone-count").value);
+  //phone count
+  const phoneCount = parseInt(document.getElementById("phone-count").value);
   
   
-  if (phoneNumber > 0) {
-    document.getElementById("phone-count").value = phoneNumber - 1;
+  if (phoneCount > 0) {
+    document.getElementById("phone-count").value = phoneCount - 1;
   
   //phone price
-  document.getElementById('phone-price').innerText = (phoneNumber - 1) * 1219;
+  document.getElementById('phone-price').innerText = (phoneCount - 1) * 1219;
   }
   
   //call function
@@ -132,15 +132,14 @@ document.getElementById("phone-minus").addEventListener("click", function () {
 //when case minus button click
 document.getElementById("case-minus").addEventListener("click", function () {
   
-  //case number
-  const caseNumber = parseInt(document.getElementById("case-count").value);
-
+  //case count
+  const caseCount = parseInt(document.getElementById("case-count").value);
   
-  if (caseNumber > 0) {
-    document.getElementById("case-count").value = caseNumber - 1;
+  if (caseCount > 0) {
+    document.getElementById("case-count").value = caseCount - 1;
 
   //case price
-  document.getElementById('case-price').innerText = (caseNumber - 1) * 59;
+  document.getElementById('case-price').innerText = (caseCount - 1) * 59;
   }
   
   //call function
